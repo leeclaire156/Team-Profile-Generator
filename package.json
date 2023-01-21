@@ -1,4 +1,25 @@
 {
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeclaire156/Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/leeclaire156/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/leeclaire156/Team-Profile-Generator#readme",
+  "description": "",
   "dependencies": {
     "inquirer": "^8.2.4"
   },
