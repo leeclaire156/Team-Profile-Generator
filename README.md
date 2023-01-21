@@ -82,6 +82,7 @@
 
   * Once this repository has been reached, type in `node index.js` into the terminal and hit `Enter`. This will start the questions prompt. Answer the questions as according to the project in question.
   ![Initializing the app with 'node index.js' in the external terminal](./Assets/Screenshots/External-Terminal-Initializing.PNG)
+
   
   ## How to contribute
   
@@ -99,7 +100,7 @@
 
   ## Test Instructions
 
-  To run a test, Git Bash any file from the __tests__ folder and invoke it using node [test].js
+  To run a test, use the command line to reach this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have jest installed with first.
     
   ## Questions
   
