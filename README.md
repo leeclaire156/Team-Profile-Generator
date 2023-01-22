@@ -88,6 +88,22 @@
   
 
   ## Credits
+  * Card template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/card/
+  
+  * Nav bar template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/
+  
+  * Changing nav bar color information provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/customize/color/
+  
+  * Changing text information provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/utilities/text/#text-alignment
+  
+  * Badge template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/badge/
+  
+  * Changing badge color and text color information provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/utilities/colors/
+  
+  * List group template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/list-group/
+  
+  * Sending email through HTML anchor information provided by [W3docs](https://www.w3docs.com/):<br></br> https://www.w3docs.com/snippets/html/how-to-create-mailto-links.html
+  
   * []():<br></br> [link]
   * []():<br></br> [link]
   * []():<br></br> [link]
