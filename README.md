@@ -104,14 +104,22 @@
   
   * Sending email through HTML anchor information provided by [W3docs](https://www.w3docs.com/):<br></br> https://www.w3docs.com/snippets/html/how-to-create-mailto-links.html
   
+  * Javascript subclass 'extends' keyword supplemental lesson provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/jsref/jsref_class_extends.asp#:~:text=The%20extends%20keyword%20is%20used,you%20create%20a%20new%20class.
+  
   * []():<br></br> [link]
+  
   * []():<br></br> [link]
+  
   * []():<br></br> [link]
+  
   * []():<br></br> [link]
+  
   * []():<br></br> [link]
+  
   * []():<br></br> [link]
+  
   * []():<br></br> [link]
-  * []():<br></br> [link]
+  
   * []():<br></br> [link]
 
   ## Test Instructions
