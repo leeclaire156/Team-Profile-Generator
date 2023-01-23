@@ -2,6 +2,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// Checks if dist directory exists in the writeIndex() function
+const dir = './dist';
+
 // The multiple classes needed to pass the data to as parameters
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -130,7 +133,7 @@ function addEmployee() {
             } else if (`${data.employee}` == "Intern") {
                 addIntern();
             } else {
-                console.log(team);
+                generateCard();
                 generateHtmlContent();
                 writeIndex();
             }
@@ -143,13 +146,10 @@ function generateCard() {
         var fifthProperty = "";
         if (`${team[i].role}` === "Manager") {
             fifthProperty = `Office Room Number: ${team[i].officeNumber}`;
-            console.log(fifthProperty)
         } else if (`${team[i].role}` === "Engineer") {
             fifthProperty = `Git Hub: <a href="https://www.github.com/${team[i].github}" target="_blank">${team[i].github}</a>`
-            console.log(fifthProperty)
         } else {
             fifthProperty = `School: ${team[i].school}`
-            console.log(fifthProperty)
         }
         var card = `<div class="col">
         <div class="card h-100">
@@ -208,5 +208,13 @@ function generateHtmlContent() {
 }
 
 function writeIndex() {
-    fs.writeFileSync('testindex.html', makeHTML(teamCards), (err) => err ? console.error(err) : console.log("index.html created!"));
+    // Synchronously checks if there's a directory called 'dist' and makes said directory if it doesn't exist
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync('dist');
+    } else {
+        // Asynchronously, meaning it waits until all questions are finished, to write the file. Synchronous equivalent is fs.writeFileSync()
+        fs.writeFile('./dist/index.html', generateHtmlContent(teamCards), (err) => err ? console.error(err) : console.log("index.html created!"));
+    }
 }
+
+writeIndex();
