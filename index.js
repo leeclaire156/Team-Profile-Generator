@@ -2,6 +2,15 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// The multiple classes needed to pass the data to as parameters
+const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
+// An array of the team
+const team = [];
+
 // An array of questions for user input
 const managersQuestions = [
     {
