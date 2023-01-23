@@ -7,6 +7,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const makeHTML = require('./src/makeHTML');
+
 // An array of the team
 const team = [];
 const teamCards = [];
@@ -117,7 +119,6 @@ function addIntern() {
         .then((data) => {
             const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
             team.push(intern);
-            // const internCard = 
         })
         .then(addEmployee)
 }
@@ -132,39 +133,52 @@ function addEmployee() {
             } else {
                 console.log("You're done!")
                 console.log(team);
-                //generate cards?
-                generateManagerCard();
+                generateCard();
+                // writeHtml(team);
             }
         });
 }
 
-function generateManagerCard() {
-    var managersProfile = team.find(item => item.role === "Manager")
-    var managerCard = `<div class="col">
-    <div class="card h-100">
-        <div class="card-header">
-            <div class="name fs-1">${managersProfile.name}</div>
-            <div class="badge rounded-pill bg-info fs-5 text-dark">Manager</div>
+function generateCard() {
+    var fifthProperty = "";
+    for (var i = 0; i < team.length; i++) {
+        var fifthProperty = "";
+        if (`${team[i].role}` === "Manager") {
+            fifthProperty = `${team[i].officeNumber}`;
+            console.log(fifthProperty)
+        } else if (`${team[i].role}` === "Engineer") {
+            fifthProperty = `Git Hub: ${team[i].github}`
+            console.log(fifthProperty)
+        } else {
+            fifthProperty = `School: ${team[i].school}`
+            console.log(fifthProperty)
+        }
+        var card = `<div class="col">
+        <div class="card h-100">
+            <div class="card-header">
+                <div class="name fs-1">${team[i].name}</div>
+                <div class="badge rounded-pill bg-info fs-5 text-dark">${team[i].role}</div>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item id">ID: ${team[i].id}</li>
+                    <li class="list-group-item email">Email: <a href="mailto:${team[i].email}">${team[i].email}</a></li>
+                    <li class="list-group-item">`+ fifthProperty + `</li>
+                </ul>
+            </div>
         </div>
-        <div class="card-body">
-            <ul class="list-group">
-                <li class="list-group-item id">ID: ${managersProfile.id}</li>
-                <li class="list-group-item email">Email: <a href="mailto:${managersProfile.email}">${managersProfile.email}</a></li>
-                <li class="list-group-item">Office Room Number: ${managersProfile.officeNumber}</li>
-            </ul>
-        </div>
-    </div>
-</div>`;
-    teamCards.push(managerCard);
+    </div>`
+        teamCards.push(card);
+    }
     console.log(teamCards);
 }
 
-function poolCards() {
 
-}
-
-
-// function writeHTML(team) {
-
-//     fs.writeFile("index.html", html, (err) => err ? console.error(err) : console.log("index.html created!"));
+// function writeHtml() {
+//     if (!fs.existsSync(DIST_DIR)) {
+//         fs.mkdirSync(DIST_DIR);
+//     } else {
+//         // fs.writeFileSync(.dist/index.html, makeHTML(team), (err) => err ? console.error(err) : console.log("index.html created!"));
+//         console.log('HTML file created in the dist folder');
+//     }
 // }
