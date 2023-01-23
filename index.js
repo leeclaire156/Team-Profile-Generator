@@ -131,8 +131,8 @@ function addEmployee() {
                 addIntern();
             } else {
                 console.log(team);
-                generateCard();
-                writeHtml();
+                generateHtmlContent();
+                writeIndex();
             }
         });
 }
@@ -170,7 +170,7 @@ function generateCard() {
     }
 }
 
-function makeHTML() {
+function generateHtmlContent() {
     var appendedCards = teamCards.join(" ");
     var htmlContent = `<!DOCTYPE html>
     <html lang="en">
@@ -207,6 +207,6 @@ function makeHTML() {
     return htmlContent
 }
 
-function writeHtml() {
+function writeIndex() {
     fs.writeFileSync('testindex.html', makeHTML(teamCards), (err) => err ? console.error(err) : console.log("index.html created!"));
 }
