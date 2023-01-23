@@ -3,13 +3,13 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // The multiple classes needed to pass the data to as parameters
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
 // An array of the team
 const team = [];
+const teamCards = [];
 
 // An array of questions for user input
 const managersQuestions = [
@@ -117,6 +117,7 @@ function addIntern() {
         .then((data) => {
             const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
             team.push(intern);
+            // const internCard = 
         })
         .then(addEmployee)
 }
@@ -125,15 +126,45 @@ function addEmployee() {
     inquirer.prompt(newEmployee)
         .then((data) => {
             if (`${data.employee}` == "Engineer") {
-                console.log("You selected engineer")
                 addEngineer();
             } else if (`${data.employee}` == "Intern") {
-                console.log("You selected intern")
                 addIntern();
             } else {
                 console.log("You're done!")
                 console.log(team);
-                return
+                //generate cards?
+                generateManagerCard();
             }
         });
 }
+
+function generateManagerCard() {
+    var managersProfile = team.find(item => item.role === "Manager")
+    var managerCard = `<div class="col">
+    <div class="card h-100">
+        <div class="card-header">
+            <div class="name fs-1">${managersProfile.name}</div>
+            <div class="badge rounded-pill bg-info fs-5 text-dark">Manager</div>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item id">ID: ${managersProfile.id}</li>
+                <li class="list-group-item email">Email: <a href="mailto:${managersProfile.email}">${managersProfile.email}</a></li>
+                <li class="list-group-item">Office Room Number: ${managersProfile.officeNumber}</li>
+            </ul>
+        </div>
+    </div>
+</div>`;
+    teamCards.push(managerCard);
+    console.log(teamCards);
+}
+
+function poolCards() {
+
+}
+
+
+// function writeHTML(team) {
+
+//     fs.writeFile("index.html", html, (err) => err ? console.error(err) : console.log("index.html created!"));
+// }
