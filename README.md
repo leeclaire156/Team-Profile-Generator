@@ -108,8 +108,8 @@
   
   * Including 'https://' before 'www.(website).com' to denote the URL is a full or absolute URL information provided by [W3 Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/html/html_links.asp
   
-  * []():<br></br> [link]
-  
+  * Credit for checking if a certain directory doesn't exist already and creating it via Node goes to [chovy](https://stackoverflow.com/users/33522/chovy):<br></br> https://stackoverflow.com/questions/21194934/how-to-create-a-directory-if-it-doesnt-exist-using-node-js
+
   * []():<br></br> [link]
   
   * []():<br></br> [link]
