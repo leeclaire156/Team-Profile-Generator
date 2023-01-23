@@ -94,19 +94,45 @@ const internQuestions = [
 
 function init() {
     inquirer.prompt(managersQuestions)
+        .then((data) => {
+            const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOffice);
+            team.push(manager);
+        })
+        .then(addEmployee)
 }
 
 init();
+
+function addEngineer() {
+    inquirer.prompt(engineerQuestions)
+        .then((data) => {
+            const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGitHub);
+            team.push(engineer);
+        })
+        .then(addEmployee)
+}
+
+function addIntern() {
+    inquirer.prompt(internQuestions)
+        .then((data) => {
+            const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
+            team.push(intern);
+        })
+        .then(addEmployee)
+}
 
 function addEmployee() {
     inquirer.prompt(newEmployee)
         .then((data) => {
             if (`${data.employee}` == "Engineer") {
                 console.log("You selected engineer")
+                addEngineer();
             } else if (`${data.employee}` == "Intern") {
                 console.log("You selected intern")
+                addIntern();
             } else {
                 console.log("You're done!")
+                console.log(team);
                 return
             }
         });
