@@ -1,10 +1,13 @@
-
 # Team Profile Generator
   
   ## Description
 
-  This project is a Node.js command-line application that generates an HTML page for a team of employees with a summary of each team member based on user input. It also utilizes Jest to test the methods used to set and return the team's information.
+  This project is a Node.js command-line application that generates an HTML page, styled by [Bootstrap](https://getbootstrap.com/), for a team of employees with a summary of each team member based on user input. It also utilizes Jest to test the methods used to set and return the team's information.
   
+  Managers utilizing this generator will be able to make a webpage of them and their team that will display their name, role, ID, and email. The emails can be clicked on to open the default email application on the local device and write an email to the selected team member's email. In addition, managers will be able to display their office's room number, their engineer's GitHub link, and their intern's current school.
+  
+  There are also validation checks for each of the questions asked to make sure the answers given are valid entries, to prevent incorrect data from being entered (i.e. numbers in a name or no name at all). In addition there will be tests available for the manager to use under the test folder.
+
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
@@ -16,8 +19,10 @@
 
   Make sure the following are downloaded:
 
-  ### `Git/GitBash` - *Strongly Recommended*
-  * While this application can be run using with the default **command prompt**, it is easier to clone this repository by using Git/GitBash, which can be downloaded for free [here](https://git-scm.com/downloads).
+  ### `Git/Git Bash` - *Strongly Recommended*
+  * While this application can be run using with the default **command prompt**, it is easier to clone this repository, make contributions, make commits, and much more by using Git/GitBash, which can be downloaded for free [here](https://git-scm.com/downloads).
+  
+  ![Using Git Bash to clone repository](./assets/screenshots/GitBash-Git-Clone.PNG)
 
   ### `Visual Studio Code [VSC]` - *Strongly Recommended*
 
@@ -34,7 +39,11 @@
 
   * This **MUST** be installed into this repository, start by opening the command line interface.
 
-  * If you have Visual Code Studio, add the local Team-Profile-Generator repository to the workspace after cloning it to your computer. Then, go to 'Settings' either through the cog icon in the lower left corner and clicking Settings, go to File -> Preferences -> Settings in the menu bar, or the key combo of Ctrl+,
+  * If you have Visual Code Studio, add the local Team-Profile-Generator repository to the workspace after cloning it to your computer. Then, go to 'Settings' either through the cog icon in the lower left corner and clicking Settings, or by going to File -> Preferences -> Settings in the menu bar, or the key combo of Ctrl+,
+
+  ![Finding 'Settings' through cogwheel/gear icon](./assets/screenshots/Finding-Settings-1.PNG)
+
+  ![Finding 'Settings' through File/Preferences/Settings](./assets/screenshots/Finding-Settings-2.PNG)
 
   * Then, change the settings in "Terminal: Explorer Kind" to "external" in the drop down menu.
 
@@ -42,45 +51,49 @@
           
   * Change the filepath of the "Terminal > External: [respective operating system]" settings to the preferred command line interface program (either your system's Command Prompts's file path or Git/Git Bash's file path)
 
-  ![Changing "Terminal > External" Settings](./Assets/Screenshots/External-Terminal-Settings-1.PNG)
+  ![Changing "Terminal > External" Settings](./assets/screenshots/External-Terminal-Settings-1.PNG)
 
   * After that, right-click the repository and select "Open in External Terminal"
 
-  ![User uses Visual Studio Code to access repository through external terminal](./Assets/Screenshots/External-Terminal-Method-1-1.PNG)
+  ![User uses Visual Studio Code to access repository through external terminal](./assets/screenshots/External-Terminal-Method-1-1.PNG)
 
-  ![Note the match from Visual Studio Code to the opened external terminal](./Assets/Screenshots/External-Terminal-Method-1-2.PNG)
+  ![Note the match from Visual Studio Code to the opened external terminal](./assets/screenshots/External-Terminal-Method-1-2.PNG)
 
-
-  * If you do not have VSC, open the preferred terminal.
+  * If you do not have Git Bash, open the preferred command-line terminal.
 
   * Use "cd Desktop" to first reach the Desktop, cd stands for change directory.
 
   * Continue using "cd" to navigate through the file path to reach the location of this repository on your computer.
 
-  ![User uses Change Directory (cd) to access repository through external terminal](./Assets/Screenshots/External-Terminal-Method-2.PNG)
+  ![User uses Change Directory (cd) to access repository through external terminal](./assets/screenshots/External-Terminal-Method-2.PNG)
 
   * Once this repository has been reached, type in `npm i inquirer@8.2.4` into the terminal and hit `Enter`.
+  
+  ![User installs inquirer using command line](./assets/screenshots/npm-i-inquirer.PNG)
 
   ### `Jest version 8.2.4` - **REQUIRED** for testing
   
   * Follow the same methods from [Inquirer v8.2.4 Installation Section](#inquirer-version-824---required-to-prompt-questions) to reach this repository if you've already exited out of the command-line, then type in `npm i jest` and hit `Enter`.
+  
+  ![User installs inquirer using command line](./assets/screenshots/npm-i-jest.PNG)
 
   ## Usage
-  * A video of this application's usage can be viewed [here](https://drive.google.com/file/d/1pbLwfHMrcf_RUMx4d5a3OQEtI1hKC_xq/view). If the link is non-functional, a copy of the video can be found in the "Assets" folder.
+  * A video of this application's usage can be viewed [here](https://drive.google.com/file/d/1pbLwfHMrcf_RUMx4d5a3OQEtI1hKC_xq/view). If the link is non-functional, a copy of the video can be found in the "assets" folder.
 
   * To use this application, start by using either of the two methods described in the [Inquirer v8.2.4 Installation Section](#inquirer-version-824---required-to-prompt-questions) to reach this repository through the preferred terminal.
 
   Method 1:
-  ![User uses Visual Studio Code to access repository through external terminal](./Assets/Screenshots/External-Terminal-Method-1-1.PNG)
+  ![User uses Visual Studio Code to access repository through external terminal](./assets/screenshots/External-Terminal-Method-1-1.PNG)
 
-  ![Note the match from Visual Studio Code to the opened external terminal](./Assets/Screenshots/External-Terminal-Method-1-2.PNG)
+  ![Note the match from Visual Studio Code to the opened external terminal](./assets/screenshots/External-Terminal-Method-1-2.PNG)
 
   Method 2:
 
-  ![User uses Change Directory (cd) to access repository through external terminal](./Assets/Screenshots/External-Terminal-Method-2.PNG)
+  ![User uses Change Directory (cd) to access repository through external terminal](./assets/screenshots/External-Terminal-Method-2.PNG)
 
   * Once this repository has been reached, type in `node index.js` into the terminal and hit `Enter`. This will start the questions prompt. Answer the questions as according to the project in question.
-  ![Initializing the app with 'node index.js' in the external terminal](./Assets/Screenshots/External-Terminal-Initializing.PNG)
+  
+  ![Initializing the app with 'node index.js' in the external terminal](./assets/screenshots/External-Terminal-Initializing.PNG)
   
   * If you'd like to validate your answer to check that it only has only capital letters, use the following code below. If anything in the string matches a lowercase letter, it will ask you to change your input. Failure of this validation check can be avoided by using the `string.toUpperCase()` method for the particular property of interest in the respective class's JS file in the lib directory, see [lib\Employee.js line 6](.\lib\Employee.js) for an example:
   ```
@@ -105,7 +118,7 @@
   
   * Badge template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/badge/
   
-  * Changing badge color and text color information provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/utilities/colors/
+  * Changing class badge color and text color information provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/utilities/colors/
   
   * List group template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/list-group/
   
@@ -113,7 +126,7 @@
   
   * Javascript subclass 'extends' keyword supplemental lesson provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/jsref/jsref_class_extends.asp#:~:text=The%20extends%20keyword%20is%20used,you%20create%20a%20new%20class.
   
-  * Including 'https://' before 'www.(website).com' to denote the URL is a full or absolute URL information provided by [W3 Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/html/html_links.asp
+  * Including 'https://' before ['www.(website).com'](#blank) to denote the URL is a full or absolute URL information provided by [W3 Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/html/html_links.asp
   
   * Credit for checking if a certain directory doesn't exist already and creating it via Node goes to [chovy](https://stackoverflow.com/users/33522/chovy):<br></br> https://stackoverflow.com/questions/21194934/how-to-create-a-directory-if-it-doesnt-exist-using-node-js
 
@@ -138,10 +151,18 @@
   ## Test Instructions
 
   To run a test, use the command line to reach the testing directory (`__tests__`) within this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have Jest installed with first.
+  
+  ![Test can be invoked with `npm test`](./assets/screenshots/npm-test-all.PNG)
+
+  ![`npm run test` also invokes testing](./assets/screenshots/npm-test-all.PNG)
 
   If you would like to run one of the tests, use `npm test [testfilename]`. For example, if you'd like to just run the Employee class test file, you would type in `npm test Employee.test.js` or `npm test Employee`.
+  
+  ![Single test being run](./assets/screenshots/npm-test-one.PNG)
 
   To run multiple tests, separate test names with a space. For example, `npm test Employee Manager` will run both the Employee tests and Manager tests.
+
+  ![Multiple tests being run](./assets/screenshots/npm-test-multiple.PNG)
     
   ## Questions
   
