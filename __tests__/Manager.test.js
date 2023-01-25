@@ -73,7 +73,7 @@ describe('Manager', () => {
         expect(manager.getRole()).toBe("Manager");
     })
 
-    // Test set 5: Office Room Number
+    // Test set 5a: Office Room Number
     it("should set office room number", () => {
         expect(manager.officeNumber).toBe(101);
         expect(typeof (manager.id)).toBe("number");
@@ -83,4 +83,27 @@ describe('Manager', () => {
         expect(manager.getOfficeNumber()).toBe(101);
         expect(typeof (manager.getId())).toBe("number");
     })
+
+    // // Test set 5b: Office Room Number - with non-capitalized letters based ID system
+    // it("should set the ID as 'rm 101a'", () => {
+    //     expect(manager.id).toBe("rm 101a");
+    //     expect(typeof (manager.id)).toBe("string");
+    // })
+
+    // it("should return id", () => {
+    //     expect(manager.getId()).toBe("rm 101a");
+    //     expect(typeof (manager.getId())).toBe("string");
+    // })
+
+    // // Test set 5c: Office Room Number - with capitalized letters based ID system
+    // it("should set the ID as 'RM 101A'", () => {
+    //     expect(manager.id).toBe("RM 101A");
+    //     expect(typeof (manager.id)).toBe("string");
+    // })
+
+    // it("should return id", () => {
+    //     expect(manager.getId()).toBe("RM 101A");
+    //     expect(typeof (manager.getId())).toBe("string");
+    // })
+
 });
