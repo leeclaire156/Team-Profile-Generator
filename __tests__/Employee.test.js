@@ -16,7 +16,7 @@ describe('Employee', () => {
         expect(employee.getName()).toBe("Amy");
     })
 
-    // // Test set 2a: ID - Add quotations to 11325 if you are using a letter AND number based identification system
+    // // Test set 2a: ID - number only based ID system
     it("should set the ID as 11325", () => {
         expect(employee.id).toBe(11325);
         expect(typeof (employee.id)).toBe("number");
@@ -27,7 +27,7 @@ describe('Employee', () => {
         expect(typeof (employee.getId())).toBe("number");
     })
 
-    // // Test set 2b: ID - with non-capitalized letters
+    // // Test set 2b: ID - with non-capitalized letters based ID system
     // it("should set the ID as 'aa11325'", () => {
     //     expect(employee.id).toBe("aa11325");
     //     expect(typeof (employee.id)).toBe("string");
@@ -38,7 +38,7 @@ describe('Employee', () => {
     //     expect(typeof (employee.getId())).toBe("string");
     // })
 
-    // // Test set 2c: ID - with capitalized letters
+    // // Test set 2c: ID - with capitalized letters based ID system
     // it("should set the ID as 'AA11325'", () => {
     //     expect(employee.id).toBe("AA11325");
     //     expect(typeof (employee.id)).toBe("string");
@@ -65,7 +65,7 @@ describe('Employee', () => {
 
 
     // Test set 4: role
-    it("should return as 'Employee'", () => {
+    it("should set role as 'Employee'", () => {
         expect(employee.role).toBe("Employee");
     })
 
