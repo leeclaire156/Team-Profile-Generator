@@ -15,6 +15,9 @@ const Intern = require('./lib/Intern');
 const team = [];
 const teamCards = [];
 
+// ID array
+const idArray = [];
+
 // An array of questions for user input
 const managersQuestions = [
     {
@@ -133,6 +136,8 @@ const engineerQuestions = [
             }
             else if (!answer) {
                 return "Please enter your engineer's ID"
+            } else if (idArray.includes(answer)) {
+                return "That ID has already been registered, check if you have the right ID"
             } else {
                 return true
             }
@@ -202,7 +207,10 @@ const internQuestions = [
             }
             else if (!answer) {
                 return "Please enter your intern's ID"
-            } else {
+            } else if (idArray.includes(answer)) {
+                return "That ID has already been registered, check if you have the right ID"
+            }
+            else {
                 return true
             }
         },
@@ -250,6 +258,7 @@ function init() {
         .then((data) => {
             const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOffice);
             team.push(manager);
+            idArray.push(data.managerId);
         })
         .then(addEmployee)
 }
@@ -261,6 +270,7 @@ function addEngineer() {
         .then((data) => {
             const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGitHub);
             team.push(engineer);
+            idArray.push(data.engineerId);
         })
         .then(addEmployee)
 }
@@ -270,6 +280,7 @@ function addIntern() {
         .then((data) => {
             const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
             team.push(intern);
+            idArray.push(data.internId);
         })
         .then(addEmployee)
 }

@@ -82,7 +82,7 @@
   * Once this repository has been reached, type in `node index.js` into the terminal and hit `Enter`. This will start the questions prompt. Answer the questions as according to the project in question.
   ![Initializing the app with 'node index.js' in the external terminal](./Assets/Screenshots/External-Terminal-Initializing.PNG)
   
-  * If you'd like to validate your answer to check that it only has only capital letters, use the following code below. If anything in the string matches a lowercase letter, it will ask you to change your input. Failure of this validation check can be avoided by using the string.toUpperCase() method for the particular property of interest in the respective class's JS file in the lib directory, see [lib\Employee.js line 6](.\lib\Employee.js) for an example:
+  * If you'd like to validate your answer to check that it only has only capital letters, use the following code below. If anything in the string matches a lowercase letter, it will ask you to change your input. Failure of this validation check can be avoided by using the `string.toUpperCase()` method for the particular property of interest in the respective class's JS file in the lib directory, see [lib\Employee.js line 6](.\lib\Employee.js) for an example:
   ```
           validate: function (answer) {
             var capitalLettersOnly = /[a-z]/
@@ -119,9 +119,9 @@
 
   * Capitalizing uppercase letters method information provided by [W3 Schools](https://www.w3schools.com):<br></br> https://www.w3schools.com/jsref/jsref_touppercase.asp#:~:text=The%20toUpperCase()%20method%20converts,not%20change%20the%20original%20string.
   
-  * Using toMatch() Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tomatchregexp--string
+  * Using `toMatch()` Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tomatchregexp--string
   
-  * Using toBe() Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tobevalue
+  * Using `toBe()` Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tobevalue
   
   * Developing tests supplemental lesson provided by [Laith Academy](https://www.youtube.com/@laithacademy):<br></br> https://www.youtube.com/watch?v=ajiAl5UNzBU
 
@@ -129,9 +129,11 @@
 
   * Regular Expression (Regex) supplemental lesson provided by [Computer Hope](https://www.computerhope.com/):<br></br> https://www.computerhope.com/jargon/r/regex.htm
 
-  * Regex cheat sheet provided by 
+  * Regex cheat sheet provided by [Cheatography](https://cheatography.com/):<br></br> https://cheatography.com/davechild/cheat-sheets/regular-expressions/
 
-  * Using RegExp.prototype.test() to check a string for a regular expression match supplemental lesson provided by [Mozilla](https://developer.mozilla.org/en-US/):<br></br> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+  * Using `RegExp.prototype.test()` to check a string for a regular expression match supplemental lesson provided by [Mozilla](https://developer.mozilla.org/en-US/):<br></br> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+
+  * Using `include()` method to check if a value is already in an Array information provided by [W3 Schools](https://www.w3schools.com):<br></br> https://www.w3schools.com/jsref/jsref_includes_array.asp
 
   ## Test Instructions
 
