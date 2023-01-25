@@ -133,8 +133,7 @@ const engineerQuestions = [
             var hasLetter = /\D/;
             if (hasLetter.test(answer)) {
                 return "Please change the ID to numbers only"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your engineer's ID"
             } else if (idArray.includes(answer)) {
                 return "That ID has already been registered, check if you have the right ID"
@@ -209,8 +208,7 @@ const internQuestions = [
                 return "Please enter your intern's ID"
             } else if (idArray.includes(answer)) {
                 return "That ID has already been registered, check if you have the right ID"
-            }
-            else {
+            } else {
                 return true
             }
         },
