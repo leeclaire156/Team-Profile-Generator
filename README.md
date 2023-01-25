@@ -21,7 +21,7 @@
 
   ### `Visual Studio Code [VSC]` - *Strongly Recommended*
 
-  * If you'd like to make changes to this code or the README file generated, Visual Studio Code is recommended and can be downloaded for free [here](https://code.visualstudio.com/download).
+  * If you'd like to make changes to this code or the HTML file generated, Visual Studio Code is recommended and can be downloaded for free [here](https://code.visualstudio.com/download).
 
   ### `Node version 16` - **REQUIRED** to generate files and utilize dependencies
   * Go to [Node's homepage, https://nodejs.org/en/](https://nodejs.org/en/), then [Downloads](https://nodejs.org/en/download/) and scroll down to the [Previous Releases](https://nodejs.org/en/download/releases/) bullet point. 
@@ -34,7 +34,7 @@
 
   * This **MUST** be installed into this repository, start by opening the command line interface.
 
-  * If you have Visual Code Studio, add the README Generator repository to the workspace. Then, go to 'Settings' either through the cog icon in the lower left corner and clicking Settings, go to File -> Preferences -> Settings in the menu bar, or the key combo of Ctrl+,
+  * If you have Visual Code Studio, add the local Team-Profile-Generator repository to the workspace after cloning it to your computer. Then, go to 'Settings' either through the cog icon in the lower left corner and clicking Settings, go to File -> Preferences -> Settings in the menu bar, or the key combo of Ctrl+,
 
   * Then, change the settings in "Terminal: Explorer Kind" to "external" in the drop down menu.
 
@@ -113,14 +113,12 @@
   * Using toBe() Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tobevalue
   
   * Developing tests supplemental lesson provided by [Laith Academy](https://www.youtube.com/@laithacademy):<br></br> https://www.youtube.com/watch?v=ajiAl5UNzBU
-  
-  * []():<br></br> [link]
-  
-  * []():<br></br> [link]
 
   ## Test Instructions
 
-  To run a test, use the command line to reach the testing directory within this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have Jest installed with first.
+  To run a test, use the command line to reach the testing directory (`__tests__`) within this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have Jest installed with first.
+
+  If you would like to run one of the tests, use `npm test [testfilename]`. For example, if you'd like to just run the Employee class test file, you would type in `npm test Employee.test.js` or `npm test Employee`.
     
   ## Questions
   
