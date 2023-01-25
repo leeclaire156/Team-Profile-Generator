@@ -82,6 +82,17 @@
   * Once this repository has been reached, type in `node index.js` into the terminal and hit `Enter`. This will start the questions prompt. Answer the questions as according to the project in question.
   ![Initializing the app with 'node index.js' in the external terminal](./Assets/Screenshots/External-Terminal-Initializing.PNG)
   
+  * If you'd like to validate your answer to check that it only has only capital letters, use the following code below. If anything in the string matches a lowercase letter, it will ask you to change your input. Failure of this validation check can be avoided by using the string.toUpperCase() method for the particular property of interest in the respective class's JS file in the lib directory, see [lib\Employee.js line 6](.\lib\Employee.js) for an example:
+  ```
+          validate: function (answer) {
+            var capitalLettersOnly = /[a-z]/
+            if (capitalLettersOnly.test(answer)) {
+                return "Please change your answer to all caps."
+            } else {
+                return true
+            }
+        },
+  ```
 
   ## Credits
   * Card template provided by [Bootstrap](https://getbootstrap.com/):<br></br> https://getbootstrap.com/docs/5.3/components/card/
@@ -114,11 +125,21 @@
   
   * Developing tests supplemental lesson provided by [Laith Academy](https://www.youtube.com/@laithacademy):<br></br> https://www.youtube.com/watch?v=ajiAl5UNzBU
 
+  * Name validation to check for numbers in input credit to [Usama Tahir](https://stackoverflow.com/users/7671569/usama-tahir):<br></br> https://stackoverflow.com/questions/5778020/check-whether-an-input-string-contains-a-number-in-javascript
+
+  * Regular Expression (Regex) supplemental lesson provided by [Computer Hope](https://www.computerhope.com/):<br></br> https://www.computerhope.com/jargon/r/regex.htm
+
+  * Regex cheat sheet provided by 
+
+  * Using RegExp.prototype.test() to check a string for a regular expression match supplemental lesson provided by [Mozilla](https://developer.mozilla.org/en-US/):<br></br> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+
   ## Test Instructions
 
   To run a test, use the command line to reach the testing directory (`__tests__`) within this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have Jest installed with first.
 
   If you would like to run one of the tests, use `npm test [testfilename]`. For example, if you'd like to just run the Employee class test file, you would type in `npm test Employee.test.js` or `npm test Employee`.
+
+  To run multiple tests, separate test names with a space. For example, `npm test Employee Manager` will run both the Employee tests and Manager tests.
     
   ## Questions
   
