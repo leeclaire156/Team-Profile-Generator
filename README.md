@@ -1,4 +1,3 @@
-
 # Team Profile Generator
   
   ## Description
