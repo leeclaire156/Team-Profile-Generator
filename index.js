@@ -137,6 +137,7 @@ function addEmployee() {
             } else if (`${data.employee}` == "Intern") {
                 addIntern();
             } else {
+                console.log(team)
                 generateCard();
                 generateHtmlContent();
                 writeIndex();
