@@ -25,7 +25,8 @@ const managersQuestions = [
         // validate: val => /[a-zA-Z]/g.test(val),
     },
     {
-        type: "input",
+        //Change type to "input" if your employment facility's identification system includes letters
+        type: "number",
         message: "What is the team manager's id?",
         name: "managerId"
     },
@@ -35,7 +36,8 @@ const managersQuestions = [
         name: "managerEmail"
     },
     {
-        type: "input",
+        //Change type to "input" if your employment facility's room numbering system includes letters
+        type: "number",
         message: "What is the team manager's office number?",
         name: "managerOffice"
     },
@@ -57,7 +59,8 @@ const engineerQuestions = [
         name: "engineerName"
     },
     {
-        type: "input",
+        //Change type to "input" if your employment facility's identification system includes letters
+        type: "number",
         message: "What is the engineer's id?",
         name: "engineerId"
     },
@@ -80,7 +83,8 @@ const internQuestions = [
         name: "internName"
     },
     {
-        type: "input",
+        //Change type to "input" if your employment facility's identification system includes letters
+        type: "number",
         message: "What is the intern's id?",
         name: "internId"
     },
@@ -212,8 +216,7 @@ function writeIndex() {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync('dist');
     } else {
-        // Asynchronously, meaning it waits until all questions are finished, to write the file. Synchronous equivalent is fs.writeFileSync()
-        fs.writeFile('./dist/index.html', generateHtmlContent(teamCards), (err) => err ? console.error(err) : console.log("index.html created!"));
+        fs.writeFileSync('./dist/index.html', generateHtmlContent(teamCards), (err) => err ? console.error(err) : console.log("index.html created!"));
     }
 }
 

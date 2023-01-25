@@ -3,12 +3,11 @@
   
   ## Description
 
-  This project is a Node.js command-line application that generates an HTML page for a team of employees with a summary of each team member based on user input.
+  This project is a Node.js command-line application that generates an HTML page for a team of employees with a summary of each team member based on user input. It also utilizes Jest to test the methods used to set and return the team's information.
   
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
-  - [How to contribute](#how-to-contribute)
   - [Credits](#credits)
   - [Test Instructions](#test-instructions)
   - [Questions](#questions)
@@ -82,9 +81,6 @@
 
   * Once this repository has been reached, type in `node index.js` into the terminal and hit `Enter`. This will start the questions prompt. Answer the questions as according to the project in question.
   ![Initializing the app with 'node index.js' in the external terminal](./Assets/Screenshots/External-Terminal-Initializing.PNG)
-
-  
-  ## How to contribute
   
 
   ## Credits
@@ -110,13 +106,13 @@
   
   * Credit for checking if a certain directory doesn't exist already and creating it via Node goes to [chovy](https://stackoverflow.com/users/33522/chovy):<br></br> https://stackoverflow.com/questions/21194934/how-to-create-a-directory-if-it-doesnt-exist-using-node-js
 
-  * []():<br></br> [link]
+  * Capitalizing uppercase letters method information provided by [W3 Schools](https://www.w3schools.com):<br></br> https://www.w3schools.com/jsref/jsref_touppercase.asp#:~:text=The%20toUpperCase()%20method%20converts,not%20change%20the%20original%20string.
   
-  * []():<br></br> [link]
+  * Using toMatch() Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tomatchregexp--string
   
-  * []():<br></br> [link]
+  * Using toBe() Jest testing method information provided by [Jest](https://jestjs.io/):<br></br> https://jestjs.io/docs/expect#tobevalue
   
-  * []():<br></br> [link]
+  * Developing tests supplemental lesson provided by [Laith Academy](https://www.youtube.com/@laithacademy):<br></br> https://www.youtube.com/watch?v=ajiAl5UNzBU
   
   * []():<br></br> [link]
   
@@ -124,7 +120,7 @@
 
   ## Test Instructions
 
-  To run a test, use the command line to reach this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have jest installed with first.
+  To run a test, use the command line to reach the testing directory within this repository and invoke Jest's testing capabilities with `npm test` or `npm run test`, all four tests will be ran. Again, make sure you have Jest installed with first.
     
   ## Questions
   
