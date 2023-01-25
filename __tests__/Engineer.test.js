@@ -65,7 +65,7 @@ describe('Engineer', () => {
 
 
     // Test set 4: role
-    it("should set role as 'engineer'", () => {
+    it("should set role as 'Engineer'", () => {
         expect(engineer.role).toBe("Engineer");
     })
 
