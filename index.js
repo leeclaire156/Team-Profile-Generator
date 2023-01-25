@@ -39,7 +39,7 @@ const managersQuestions = [
         },
     },
     {
-        //Change validation  if your employment facility's identification system includes letters
+        //Remove first condition in validation from the 'if-else' conditional statement if your employment facility's identification system includes letters
         type: "input",
         message: "What is the team manager's id?",
         name: "managerId",
@@ -93,7 +93,7 @@ const managersQuestions = [
 ]
 
 const newEmployee = [
-    {//options should be intern, engineer, or I dont want to add any more team members
+    {//options should be intern, engineer, or I don't want to add any more team members
         type: "list",
         message: "Which type of team member would you like to add?",
         choices: ["Engineer", "Intern", "I don't want to add any more team members."],
@@ -105,23 +105,68 @@ const engineerQuestions = [
     {
         type: "input",
         message: "What is the engineer's name?",
-        name: "engineerName"
+        name: "engineerName",
+        validate: function (answer) {
+            var hasNumber = /\d/;
+            var hasProperCase = /^[a-z]/;
+            if (hasNumber.test(answer)) {
+                return "Please change the name to letters only"
+            } else if (hasProperCase.test(answer)) {
+                return "Remember to capitalize the beginning of your engineer's name"
+            }
+            else if (!answer) {
+                return "Please enter your engineer's name"
+            } else {
+                return true
+            }
+        },
     },
     {
         //Change type to "input" if your employment facility's identification system includes letters
-        type: "number",
+        type: "input",
         message: "What is the engineer's id?",
-        name: "engineerId"
+        name: "engineerId",
+        validate: function (answer) {
+            var hasLetter = /\D/;
+            if (hasLetter.test(answer)) {
+                return "Please change the ID to numbers only"
+            }
+            else if (!answer) {
+                return "Please enter your engineer's ID"
+            } else {
+                return true
+            }
+        },
     },
     {
         type: "input",
         message: "What is the engineer's email?",
-        name: "engineerEmail"
+        name: "engineerEmail",
+        validate: function (answer) {
+            var hasAtSymbol = /@/;
+            var hasPeriod = /\./;
+            if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
+                return true
+            } else if (!answer) {
+                return "Please enter your engineer's email"
+            }
+            else {
+                return "Please input the email in a proper format with the @ symbol and a period"
+            }
+        },
     },
     {
         type: "input",
         message: "What is the engineer's GitHub username?",
-        name: "engineerGitHub"
+        name: "engineerGitHub",
+        validate: function (answer) {
+            if (!answer) {
+                return "Please enter your engineer's GitHub username"
+            }
+            else {
+                return true
+            }
+        },
     },
 ]
 
@@ -129,23 +174,74 @@ const internQuestions = [
     {
         type: "input",
         message: "What is the interns's name?",
-        name: "internName"
+        name: "internName",
+        validate: function (answer) {
+            var hasNumber = /\d/;
+            var hasProperCase = /^[a-z]/;
+            if (hasNumber.test(answer)) {
+                return "Please change the name to letters only"
+            } else if (hasProperCase.test(answer)) {
+                return "Remember to capitalize the beginning of your intern's name"
+            }
+            else if (!answer) {
+                return "Please enter your intern's name"
+            } else {
+                return true
+            }
+        },
     },
     {
-        //Change type to "input" if your employment facility's identification system includes letters
-        type: "number",
+        //Remove first condition in validation from the 'if-else' conditional statement if your employment facility's identification system includes letters
+        type: "input",
         message: "What is the intern's id?",
-        name: "internId"
+        name: "internId",
+        validate: function (answer) {
+            var hasLetter = /\D/;
+            if (hasLetter.test(answer)) {
+                return "Please change the ID to numbers only"
+            }
+            else if (!answer) {
+                return "Please enter your intern's ID"
+            } else {
+                return true
+            }
+        },
     },
     {
         type: "input",
         message: "What is the intern's email?",
-        name: "internEmail"
+        name: "internEmail",
+        validate: function (answer) {
+            var hasAtSymbol = /@/;
+            var hasPeriod = /\./;
+            if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
+                return true
+            } else if (!answer) {
+                return "Please enter your intern's email"
+            }
+            else {
+                return "Please input the email in a proper format with the @ symbol and a period"
+            }
+        },
     },
     {
         type: "input",
         message: "What is the intern's school?",
-        name: "internSchool"
+        name: "internSchool",
+        validate: function (answer) {
+            var hasNumber = /\d/;
+            var hasProperCase = /^[a-z]/;
+            if (hasNumber.test(answer)) {
+                return "Please change the name to letters only"
+            } else if (hasProperCase.test(answer)) {
+                return "Remember to capitalize the beginning of your intern's school's name"
+            }
+            else if (!answer) {
+                return "Please enter your intern's school's name"
+            } else {
+                return true
+            }
+        },
     },
 ]
 
@@ -201,7 +297,7 @@ function generateCard() {
         if (`${team[i].role}` === "Manager") {
             fifthProperty = `Office Room Number: ${team[i].officeNumber}`;
         } else if (`${team[i].role}` === "Engineer") {
-            fifthProperty = `Git Hub: <a href="https://www.github.com/${team[i].github}" target="_blank">${team[i].github}</a>`
+            fifthProperty = `GitHub Profile: <a href="https://www.github.com/${team[i].github}" target="_blank">${team[i].github}</a>`
         } else {
             fifthProperty = `School: ${team[i].school}`
         }
