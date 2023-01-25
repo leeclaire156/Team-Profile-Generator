@@ -21,25 +21,74 @@ const managersQuestions = [
         type: "input",
         message: "What is the team manager's name?",
         name: "managerName",
-        // TODO: add validation so that the users name must only be written with letters, code below prevents only numbers from being entered but accepts answers like John12 or 12Jane
-        // validate: val => /[a-zA-Z]/g.test(val),
+        validate: function (answer) {
+            // Regex note: The forward slashes denote the regular expression boundary and \d denotes a digit character
+            var hasNumber = /\d/;
+            // Regex note: The square brackets mean 'match anything contained within'
+            var hasProperCase = /^[a-z]/;
+            if (hasNumber.test(answer)) {
+                return "Please change the name to letters only"
+            } else if (hasProperCase.test(answer)) {
+                return "Remember to capitalize the beginning of your name"
+            }
+            else if (!answer) {
+                return "Please enter your name"
+            } else {
+                return true
+            }
+        },
     },
     {
-        //Change type to "input" if your employment facility's identification system includes letters
-        type: "number",
+        //Change validation  if your employment facility's identification system includes letters
+        type: "input",
         message: "What is the team manager's id?",
-        name: "managerId"
+        name: "managerId",
+        validate: function (answer) {
+            var hasLetter = /\D/;
+            if (hasLetter.test(answer)) {
+                return "Please change the ID to numbers only"
+            }
+            else if (!answer) {
+                return "Please enter your ID"
+            } else {
+                return true
+            }
+        },
     },
     {
         type: "input",
         message: "What is the team manager's email?",
-        name: "managerEmail"
+        name: "managerEmail",
+        validate: function (answer) {
+            var hasAtSymbol = /@/;
+            // Regex note: The backward slash creates an escape sequence and allows for recognition of the period symbol, otherwise a period (/./) means 'Match any character'
+            var hasPeriod = /\./;
+            if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
+                return true
+            } else if (!answer) {
+                return "Please enter your email"
+            }
+            else {
+                return "Please input the email in a proper format with the @ symbol and a period"
+            }
+        },
     },
     {
-        //Change type to "input" if your employment facility's room numbering system includes letters
-        type: "number",
+        //Remove first condition in validation from the 'if-else' conditional statement if your employment facility's room numbering system includes letters
+        type: "input",
         message: "What is the team manager's office number?",
-        name: "managerOffice"
+        name: "managerOffice",
+        validate: function (answer) {
+            var hasLetter = /\D/;
+            if (hasLetter.test(answer)) {
+                return "Please change the office number to numbers only"
+            }
+            else if (!answer) {
+                return "Please enter your office number"
+            } else {
+                return true
+            }
+        }
     },
 ]
 
