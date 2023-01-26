@@ -29,13 +29,17 @@ const managersQuestions = [
             var hasNumber = /\d/;
             // Regex note: The square brackets mean 'match anything contained within'
             var hasProperCase = /^[a-z]/;
+            // Regex note: the \s denotes white space.
+            var hasSpaceBefore = /^ /;
+            var hasSpaceAfter = / $/;
             if (hasNumber.test(answer)) {
                 return "Please change the name to letters only"
             } else if (hasProperCase.test(answer)) {
                 return "Remember to capitalize the beginning of your name"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your name"
+            } else if (hasSpaceBefore.test(answer) || hasSpaceAfter.test(answer)) {
+                return "Enter at least a character that isn't a space, or remove the space that is preceding and/or proceeding the input"
             } else {
                 return true
             }
@@ -47,11 +51,10 @@ const managersQuestions = [
         message: "What is the team manager's id?",
         name: "managerId",
         validate: function (answer) {
-            var hasLetter = /\D/;
-            if (hasLetter.test(answer)) {
+            var hasNonDigit = /\D/;
+            if (hasNonDigit.test(answer)) {
                 return "Please change the ID to numbers only"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your ID"
             } else {
                 return true
@@ -66,12 +69,15 @@ const managersQuestions = [
             var hasAtSymbol = /@/;
             // Regex note: The backward slash creates an escape sequence and allows for recognition of the period symbol, otherwise a period (/./) means 'Match any character'
             var hasPeriod = /\./;
-            if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
-                return true
+            // Emails should not have any spaces at all, and thus have a different regex expression than other input questions, \s, to check for spaces
+            var hasWhiteSpace = /\s/;
+            if (hasWhiteSpace.test(answer)) {
+                return "Check the input for spaces"
             } else if (!answer) {
                 return "Please enter your email"
-            }
-            else {
+            } else if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
+                return true
+            } else {
                 return "Please input the email in a proper format with the @ symbol and a period"
             }
         },
@@ -82,11 +88,10 @@ const managersQuestions = [
         message: "What is the team manager's office number?",
         name: "managerOffice",
         validate: function (answer) {
-            var hasLetter = /\D/;
-            if (hasLetter.test(answer)) {
+            var hasNonDigit = /\D/;
+            if (hasNonDigit.test(answer)) {
                 return "Please change the office number to numbers only"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your office number"
             } else {
                 return true
@@ -112,13 +117,16 @@ const engineerQuestions = [
         validate: function (answer) {
             var hasNumber = /\d/;
             var hasProperCase = /^[a-z]/;
+            var hasSpaceBefore = /^ /;
+            var hasSpaceAfter = / $/;
             if (hasNumber.test(answer)) {
                 return "Please change the name to letters only"
             } else if (hasProperCase.test(answer)) {
                 return "Remember to capitalize the beginning of your engineer's name"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your engineer's name"
+            } else if (hasSpaceBefore.test(answer) || hasSpaceAfter.test(answer)) {
+                return "Enter at least a character that isn't a space, or remove the space that is preceding and/or proceeding the input"
             } else {
                 return true
             }
@@ -130,8 +138,8 @@ const engineerQuestions = [
         message: "What is the engineer's id?",
         name: "engineerId",
         validate: function (answer) {
-            var hasLetter = /\D/;
-            if (hasLetter.test(answer)) {
+            var hasNonDigit = /\D/;
+            if (hasNonDigit.test(answer)) {
                 return "Please change the ID to numbers only"
             } else if (!answer) {
                 return "Please enter your engineer's ID"
@@ -149,12 +157,14 @@ const engineerQuestions = [
         validate: function (answer) {
             var hasAtSymbol = /@/;
             var hasPeriod = /\./;
-            if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
-                return true
+            var hasWhiteSpace = /\s/;
+            if (hasWhiteSpace.test(answer)) {
+                return "Check the input for spaces"
             } else if (!answer) {
-                return "Please enter your engineer's email"
-            }
-            else {
+                return "Please enter your email"
+            } else if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
+                return true
+            } else {
                 return "Please input the email in a proper format with the @ symbol and a period"
             }
         },
@@ -164,10 +174,13 @@ const engineerQuestions = [
         message: "What is the engineer's GitHub username?",
         name: "engineerGitHub",
         validate: function (answer) {
+            // GitHub usernames should not have any spaces at all, and thus have a different regex expression than other input questions, \s, to check for spaces
+            var hasWhiteSpace = /\s/;
             if (!answer) {
                 return "Please enter your engineer's GitHub username"
-            }
-            else {
+            } else if (hasWhiteSpace.test(answer)) {
+                return "Check the input for spaces"
+            } else {
                 return true
             }
         },
@@ -182,13 +195,16 @@ const internQuestions = [
         validate: function (answer) {
             var hasNumber = /\d/;
             var hasProperCase = /^[a-z]/;
+            var hasSpaceBefore = /^ /;
+            var hasSpaceAfter = / $/;
             if (hasNumber.test(answer)) {
                 return "Please change the name to letters only"
             } else if (hasProperCase.test(answer)) {
                 return "Remember to capitalize the beginning of your intern's name"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your intern's name"
+            } else if (hasSpaceBefore.test(answer) || hasSpaceAfter.test(answer)) {
+                return "Enter at least a character that isn't a space, or remove the space that is preceding and/or proceeding the input"
             } else {
                 return true
             }
@@ -200,11 +216,10 @@ const internQuestions = [
         message: "What is the intern's id?",
         name: "internId",
         validate: function (answer) {
-            var hasLetter = /\D/;
-            if (hasLetter.test(answer)) {
+            var hasNonDigit = /\D/;
+            if (hasNonDigit.test(answer)) {
                 return "Please change the ID to numbers only"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your intern's ID"
             } else if (idArray.includes(answer)) {
                 return "That ID has already been registered, check if you have the right ID"
@@ -220,12 +235,14 @@ const internQuestions = [
         validate: function (answer) {
             var hasAtSymbol = /@/;
             var hasPeriod = /\./;
-            if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
-                return true
+            var hasWhiteSpace = /\s/;
+            if (hasWhiteSpace.test(answer)) {
+                return "Check the input for spaces"
             } else if (!answer) {
-                return "Please enter your intern's email"
-            }
-            else {
+                return "Please enter your email"
+            } else if (hasPeriod.test(answer) && hasAtSymbol.test(answer)) {
+                return true
+            } else {
                 return "Please input the email in a proper format with the @ symbol and a period"
             }
         },
@@ -237,13 +254,16 @@ const internQuestions = [
         validate: function (answer) {
             var hasNumber = /\d/;
             var hasProperCase = /^[a-z]/;
+            var hasSpaceBefore = /^ /;
+            var hasSpaceAfter = / $/;
             if (hasNumber.test(answer)) {
                 return "Please change the name to letters only"
             } else if (hasProperCase.test(answer)) {
                 return "Remember to capitalize the beginning of your intern's school's name"
-            }
-            else if (!answer) {
+            } else if (!answer) {
                 return "Please enter your intern's school's name"
+            } else if (hasSpaceBefore.test(answer) || hasSpaceAfter.test(answer)) {
+                return "Enter at least a character that isn't a space, or remove the space that is preceding and/or proceeding the input"
             } else {
                 return true
             }
@@ -291,7 +311,6 @@ function addEmployee() {
             } else if (`${data.employee}` == "Intern") {
                 addIntern();
             } else {
-                console.log(team)
                 generateCard();
                 generateHtmlContent();
                 writeIndex();
